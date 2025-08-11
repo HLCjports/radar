@@ -1,0 +1,38 @@
+! name: Exclude Specified Domains
+! description: Removes all results from the listed domains
+! public: false
+! author: Custom
+! avatar: #000000
+
+$discard,site=instagram.com
+$discard,site=facebook.com
+$discard,site=x.com
+$discard,site=pinterest.com
+$discard,site=tiktok.com
+$discard,site=youtube.com
+$discard,site=linkedin.com
+$discard,site=therealreal.com
+$discard,site=vestiairecollective.com
+$discard,site=farfetch.com
+$discard,site=grailed.com
+$discard,site=poshmark.com
+$discard,site=vinted.com
+$discard,site=ebay.com
+$discard,site=mercari.com
+$discard,site=depop.com
+$discard,site=rakuten.co.jp
+$discard,site=yahoo.co.jp
+$discard,site=rebag.com
+$discard,site=amazon.com
+$discard,site=trustpilot.com
+$discard,site=wikipedia.org
+$discard,site=etsy.com
+$discard,site=vogue.com
+$discard,site=gq.com
+$discard,site=elle.com
+$discard,site=harpersbazaar.com
+$discard,site=thecut.com
+$discard,site=forbes.com
+$discard,site=businessinsider.com
+$discard,site=nytimes.com
+$discard,site=reddit.com
