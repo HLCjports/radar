@@ -1,15 +1,9 @@
-! name: JAA Lead Finder – Kansai Shops Focus
-! description: Surface independent second-hand fashion shops in Kansai and de-prioritize social, marketplaces, big chains, blogs/news, and listicles. Boosts shop/store/company/access/contact/store-info pages and “recycle shop / vintage / 古着”.
+! name: JAA Lead Finder - Kansai Shops Focus
+! description: Surface independent second-hand fashion shops in Kansai and de-prioritize social, marketplaces, big chains, blogs/news, and listicles. Boosts shop/store/company/access/contact/store-info pages and vintage/second-hand/古着.
 ! public: false
 ! author: JAA
 ! avatar: #000000
 
-# ---------------------------
-# POSITIVE SIGNALS (BOOSTS)
-# ---------------------------
-
-# Store / location / contact page slugs (EN)
-#/... means “segment contains ...”
 /shop.$boost=3
 /shop/$boost=3
 /stores.$boost=3
@@ -26,8 +20,6 @@
 /access/$boost=3
 /map.$boost=1
 /location.$boost=1
-
-# Store / location / contact page slugs (JP)
 /店舗.$boost=3
 /店舗/$boost=3
 /店舗情報.$boost=3
@@ -42,8 +34,6 @@
 /アクセス/$boost=3
 /お問い合わせ.$boost=3
 /お問い合わせ/$boost=3
-
-# Category / intent hints (EN)
 /vintage.$boost=2
 /vintage/$boost=2
 /second-hand.$boost=2
@@ -58,8 +48,6 @@
 /recycle-shop/$boost=2
 /thrift.$boost=2
 /thrift/$boost=2
-
-# Category / intent hints (JP)
 /古着.$boost=3
 /古着/$boost=3
 /ブランド古着.$boost=3
@@ -73,17 +61,10 @@
 /アクセサリー.$boost=1
 /アクセサリー/$boost=1
 
-# Small-merchant SaaS shop hosts (often used by indie stores)
 $boost=2,site=stores.jp
 $boost=2,site=shop-pro.jp
 $boost=2,site=base.shop
 
-# ---------------------------
-# NEGATIVE SIGNALS (FILTERS)
-# ---------------------------
-
-# Blogs, news, PR, jobs (path-level)
-#/.../$discard blocks pages whose path contains the segment
 /blog.$discard
 /blog/$discard
 /news.$discard
@@ -99,7 +80,6 @@ $boost=2,site=base.shop
 /採用.$discard
 /求人.$discard
 
-# Social networks & UGC
 $discard,site=instagram.com
 $discard,site=facebook.com
 $discard,site=x.com
@@ -109,7 +89,6 @@ $discard,site=youtube.com
 $discard,site=linkedin.com
 $discard,site=reddit.com
 
-# Marketplaces & classifieds
 $discard,site=therealreal.com
 $discard,site=vestiairecollective.com
 $discard,site=farfetch.com
@@ -125,7 +104,6 @@ $discard,site=rebag.com
 $discard,site=amazon.com
 $discard,site=etsy.com
 
-# Directories, travel/listicles, general media
 $discard,site=yelp.com
 $discard,site=tripadvisor.com
 $discard,site=timeout.com
@@ -140,14 +118,12 @@ $discard,site=thesmartlocal.com
 $discard,site=permanentstyle.com
 $discard,site=prtimes.jp
 
-# Maps & mass directories
-$discard,site=google.com     # maps, local packs etc.
+$discard,site=google.com
 $discard,site=maps.google.com
 $discard,site=tabelog.com
 $discard,site=hotpepper.jp
 $discard,site=jalan.net
 
-# Review / reputation platforms & encyclopedias
 $discard,site=trustpilot.com
 $discard,site=wikipedia.org
 $discard,site=vogue.com
@@ -160,7 +136,6 @@ $discard,site=businessinsider.com
 $discard,site=nytimes.com
 $discard,site=medium.com
 
-# JP blog hosts (high UGC noise)
 $discard,site=ameblo.jp
 $discard,site=note.com
 $discard,site=hatena.ne.jp
@@ -174,14 +149,11 @@ $discard,site=blog.jp
 $discard,site=blogspot.com
 $discard,site=wordpress.com
 
-# Rankers / lead-gen aggregators (低品質な一覧記事)
 $discard,site=uridoki.net
 $discard,site=oikura.jp
 $discard,site=kaitoriplus.tokyo.jp
 $discard,site=makxas.com
-$discard,site=spinns.com
 
-# Large JP second-hand chains to exclude
 $discard,site=2ndstreet.jp
 $discard,site=en.2ndstreet.jp
 $discard,site=komehyo.co.jp
