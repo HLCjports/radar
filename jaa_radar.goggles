@@ -1,0 +1,207 @@
+! name: JAA Lead Finder – Kansai Shops Focus
+! description: Surface independent second-hand fashion shops in Kansai and de-prioritize social, marketplaces, big chains, blogs/news, and listicles. Boosts shop/store/company/access/contact/store-info pages and “recycle shop / vintage / 古着”.
+! public: false
+! author: JAA
+! avatar: #000000
+
+# ---------------------------
+# POSITIVE SIGNALS (BOOSTS)
+# ---------------------------
+
+# Store / location / contact page slugs (EN)
+#/... means “segment contains ...”
+/shop.$boost=3
+/shop/$boost=3
+/stores.$boost=3
+/store.$boost=3
+/store/$boost=3
+/shops/$boost=3
+/company.$boost=2
+/company/$boost=2
+/about.$boost=2
+/about/$boost=2
+/contact.$boost=2
+/contact/$boost=2
+/access.$boost=3
+/access/$boost=3
+/map.$boost=1
+/location.$boost=1
+
+# Store / location / contact page slugs (JP)
+/店舗.$boost=3
+/店舗/$boost=3
+/店舗情報.$boost=3
+/店舗情報/$boost=3
+/店舗案内.$boost=2
+/店舗案内/$boost=2
+/店舗一覧.$boost=2
+/店舗一覧/$boost=2
+/会社概要.$boost=3
+/会社概要/$boost=3
+/アクセス.$boost=3
+/アクセス/$boost=3
+/お問い合わせ.$boost=3
+/お問い合わせ/$boost=3
+
+# Category / intent hints (EN)
+/vintage.$boost=2
+/vintage/$boost=2
+/second-hand.$boost=2
+/second-hand/$boost=2
+/secondhand.$boost=2
+/secondhand/$boost=2
+/pre-owned.$boost=2
+/pre-owned/$boost=2
+/consignment.$boost=2
+/consignment/$boost=2
+/recycle-shop.$boost=2
+/recycle-shop/$boost=2
+/thrift.$boost=2
+/thrift/$boost=2
+
+# Category / intent hints (JP)
+/古着.$boost=3
+/古着/$boost=3
+/ブランド古着.$boost=3
+/ブランド古着/$boost=3
+/ヴィンテージ.$boost=2
+/ヴィンテージ/$boost=2
+/リサイクルショップ.$boost=3
+/リサイクルショップ/$boost=3
+/バッグ.$boost=1
+/バッグ/$boost=1
+/アクセサリー.$boost=1
+/アクセサリー/$boost=1
+
+# Small-merchant SaaS shop hosts (often used by indie stores)
+$boost=2,site=stores.jp
+$boost=2,site=shop-pro.jp
+$boost=2,site=base.shop
+
+# ---------------------------
+# NEGATIVE SIGNALS (FILTERS)
+# ---------------------------
+
+# Blogs, news, PR, jobs (path-level)
+#/.../$discard blocks pages whose path contains the segment
+/blog.$discard
+/blog/$discard
+/news.$discard
+/news/$discard
+/press.$discard
+/press/$discard
+/recruit.$discard
+/recruit/$discard
+/careers.$discard
+/careers/$discard
+/jobs.$discard
+/jobs/$discard
+/採用.$discard
+/求人.$discard
+
+# Social networks & UGC
+$discard,site=instagram.com
+$discard,site=facebook.com
+$discard,site=x.com
+$discard,site=pinterest.com
+$discard,site=tiktok.com
+$discard,site=youtube.com
+$discard,site=linkedin.com
+$discard,site=reddit.com
+
+# Marketplaces & classifieds
+$discard,site=therealreal.com
+$discard,site=vestiairecollective.com
+$discard,site=farfetch.com
+$discard,site=grailed.com
+$discard,site=poshmark.com
+$discard,site=vinted.com
+$discard,site=ebay.com
+$discard,site=mercari.com
+$discard,site=depop.com
+$discard,site=rakuten.co.jp
+$discard,site=yahoo.co.jp
+$discard,site=rebag.com
+$discard,site=amazon.com
+$discard,site=etsy.com
+
+# Directories, travel/listicles, general media
+$discard,site=yelp.com
+$discard,site=tripadvisor.com
+$discard,site=timeout.com
+$discard,site=magical-trip.com
+$discard,site=fun-japan.jp
+$discard,site=livejapan.com
+$discard,site=japantravel.navitime.com
+$discard,site=en.japantravel.com
+$discard,site=fromworktowander.com
+$discard,site=getnomad.app
+$discard,site=thesmartlocal.com
+$discard,site=permanentstyle.com
+$discard,site=prtimes.jp
+
+# Maps & mass directories
+$discard,site=google.com     # maps, local packs etc.
+$discard,site=maps.google.com
+$discard,site=tabelog.com
+$discard,site=hotpepper.jp
+$discard,site=jalan.net
+
+# Review / reputation platforms & encyclopedias
+$discard,site=trustpilot.com
+$discard,site=wikipedia.org
+$discard,site=vogue.com
+$discard,site=gq.com
+$discard,site=elle.com
+$discard,site=harpersbazaar.com
+$discard,site=thecut.com
+$discard,site=forbes.com
+$discard,site=businessinsider.com
+$discard,site=nytimes.com
+$discard,site=medium.com
+
+# JP blog hosts (high UGC noise)
+$discard,site=ameblo.jp
+$discard,site=note.com
+$discard,site=hatena.ne.jp
+$discard,site=hatena.blog
+$discard,site=livedoor.jp
+$discard,site=goo.ne.jp
+$discard,site=excite.co.jp
+$discard,site=so-net.ne.jp
+$discard,site=nifty.com
+$discard,site=blog.jp
+$discard,site=blogspot.com
+$discard,site=wordpress.com
+
+# Rankers / lead-gen aggregators (低品質な一覧記事)
+$discard,site=uridoki.net
+$discard,site=oikura.jp
+$discard,site=kaitoriplus.tokyo.jp
+$discard,site=makxas.com
+$discard,site=spinns.com
+
+# Large JP second-hand chains to exclude
+$discard,site=2ndstreet.jp
+$discard,site=en.2ndstreet.jp
+$discard,site=komehyo.co.jp
+$discard,site=brandoff.co.jp
+$discard,site=brand-off.jp
+$discard,site=allu-official.com
+$discard,site=hardoff.co.jp
+$discard,site=mode-off.jp
+$discard,site=bookoff.co.jp
+$discard,site=offhouse.jp
+$discard,site=daikokuya78.co.jp
+$discard,site=nanboya.com
+$discard,site=eco-ring.com
+$discard,site=eco-style.jp
+$discard,site=treasure-f.com
+$discard,site=kind.co.jp
+$discard,site=galleryrare.jp
+$discard,site=ragtag.jp
+$discard,site=jamtrading.jp
+$discard,site=brandeer.jp
+$discard,site=otakaraya.jp
+$discard,site=kaitori-daikichi.jp
+$discard,site=daikichi-fc.com
